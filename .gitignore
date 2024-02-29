@@ -35,10 +35,13 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 # database local dev
-postgres-data
+mariadb-data
 
 # vscode local config
 settings.json
 
 # env local coonfig
 .env
+
+# local db session
+mini_pos_db.session.sql

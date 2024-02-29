@@ -11,15 +11,16 @@ services:
       - database
 
   database:
-      image: postgres:latest
+      image: mariadb:latest
       environment:
-        POSTGRES_USER: mini_pos_api
-        POSTGRES_PASSWORD: mini_pos_api
-        POSTGRES_DB: mini_pos
+        MYSQL_DATABASE: mini_pos
+        MYSQL_USER: mini_pos_api
+        MYSQL_PASSWORD: mini_pos_api
+        MYSQL_ROOT_PASSWORD: mini_pos_api_root
       volumes:
-        - "./postgres-data:/var/lib/postgresql/data"
+        - "./mariadb-data:/var/lib/mysql"
       ports:
-        - "5555:5432"
+        - "3333:3306"
 
 volumes:
-  postgres-data:
+  mariadb-data:
